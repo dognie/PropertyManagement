@@ -1,0 +1,182 @@
+<!--
+  Generated template for the Repair page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="navbar" style="padding:0 0 0 0;min-height:60px;max-height:60px;height:60px;overflow:visible;z-index:1000;position:relative">
+    <div style="width:100%;height:100%">
+      <div class="titleStyle" style="float:left">励生活</div>
+      <div style="float:right;width:100px;height:60px;padding-top:10px;padding-left:10px"
+        (click) = "isMouseOnUserIcon = !isMouseOnUserIcon"
+      >
+        <div style="width:45px;height:45px;border-radius: 50%; border: 3px solid #eee; overflow: hidden;"
+        >
+          <img src={{vUserIcon}}>
+        </div>
+        <div [hidden]="!isMouseOnUserIcon" style="background-color:red;width:100px;height:200px;position:relative;left:-30px;top:5px;overflow:visible;padding:0 0 0 0">
+          <div
+            (click) = "isMouseOnOrg = !isMouseOnOrg"
+          >
+            <div style="height:60px;text-align:center"
+
+               *ngFor  = "let vSelfOrgName of vSelfOrgNameList"
+               (click) = "changeSelfOrganization(vSelfOrgName)"
+             >
+               <p style="font-size:18px;font-family:STXihei;padding-top:16px" >{{vSelfOrgName}}</p>
+            </div>
+          </div>
+          <div style="height:60px;text-align:center"
+            (click) = "loginOut()"
+          >
+            <p style="font-size:18px;font-family:STXihei;padding-top:16px">注销</p>
+          </div>
+        </div>
+        <div [hidden]="!isMouseOnOrg" style="background-color:black;width:1250px;height:500px;position:relative;left:-1180px;top:-60px;overflow:auto;padding:0 0 0 0">
+          <div style="height:70px;text-align:center" (click) = "isMouseOnOrg =isMouseOnUserIcon =false ">
+            <p>...</p>
+            <p>返回</p>
+          </div>
+          <div style="height:60px;text-align:center"
+            *ngFor  = "let vOrgName of vChildOrgNameList"
+            (click) = "changeOrganization(vOrgName)"
+            (click) = "isMouseOnOrg =isMouseOnUserIcon =false "
+          >
+            <p style="font-size:18px;font-family:STXihei;padding-top:16px">
+              {{vOrgName}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-navbar>
+  <ion-navbar class="navbarStyle">
+    <ion-grid style="padding:0 0 0 0;">
+      <ion-row class="rowStyle">
+        <div class="rowClickedStyle">报事报修</div>
+        <ion-col class="rowUnClickedStyle" (click) = "workOrdersPage()">工单列表</ion-col>
+        <div style="width:565px">
+          <div class="filterStyle"
+               (mouseout) = "isMouseOnUser = false"
+               (mouseover)= "isMouseOnUser = true"
+               [ngClass]  = "{'mouseOnTypefilterStyle':isMouseOnUser}"
+                  >
+            <div class="filterStyle">
+              <p class="pFrontStyle">{{vFilterUserName}}</p>
+            </div>
+            <div class="filterStyle"
+                 *ngFor  = "let vUser of vUserList"
+                 (click) = "setSearchValue(vUser.username,'user')"
+                 [hidden]= "!isMouseOnUser"
+                    >
+              <p class="pFrontStyle">
+                {{vUser.username}}
+              </p>
+            </div>
+          </div>
+          <div class="filterStyle"
+            (mouseout) = "isMouseOnType = false"
+            (mouseover)= "isMouseOnType = true"
+            [ngClass]  = "{'mouseOnTypefilterStyle':isMouseOnType}"
+          >
+            <div class="filterStyle">
+              <p class="pFrontStyle">{{vUserStatus}}</p>
+            </div>
+            <div class="filterStyle"
+                 *ngFor  = "let vStatus of vTypeList"
+                 (click) = "setSearchValue(vStatus,'type')"
+                 [hidden]= "!isMouseOnType"
+            >
+              <p class="pFrontStyle">
+                {{vStatus}}
+              </p>
+            </div>
+          </div>
+          <div class="filterStyle"
+            (mouseout) = "isMouseOnTimeFilter = false"
+            (mouseover)= "isMouseOnTimeFilter = true"
+            [ngClass]  = "{'mouseOnTimefilterStyle':isMouseOnTimeFilter}"
+          >
+            <p class="pFrontStyle">时间</p>
+            <div [hidden]="!isMouseOnTimeFilter"
+              style="background-color:#2D2D2D;height:61px;width:115px"
+            >
+              <material-datepicker [(date)]="vStartDate"></material-datepicker>
+            </div>
+            <div [hidden]="!isMouseOnTimeFilter"
+              style="background-color:#2D2D2D;height:61px;width:115px"
+            >
+              <material-datepicker [(date)]="vEndDate"></material-datepicker>
+            </div>
+          </div>
+          <div class="filterStyle"
+            (click)    = 'searchByFilter()'
+            (mouseout) = "isMouseOnSearch = false"
+            (mouseover)= "isMouseOnSearch = true"
+            [ngClass]  = "{'mouseOnfilterStyle':isMouseOnSearch}"
+          >
+            <p class="pFrontStyle">查询</p>
+          </div>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <ion-grid class="contentGridStyle">
+    <ion-list *ngFor="let data of vContentData" no-lines style="margin-bottom:20px">
+      <ion-item style="margin: 0 0 0 0;height:148px;padding-left:20px"
+        #item (mouseover)=setItem(item)
+        (mouseout)=unSetItem(item)
+      >
+        <div style="float:left;width:82% ">
+          <div class="contentStyle" style="margin-top:20px">
+            <div style="float:left;width:90px">
+              {{ data.creatorName }}
+            </div>
+            <div style="float:left">
+              <span class="star"
+                *ngFor="let star of stars"
+                [ngClass]  = "{'ratingStyle':isRating(data,star)}"
+              >&#9733;</span>
+                <!-- {{data.rank}} -->
+            </div>
+          </div>
+          <div class="contentStyle clearFloat">{{ data.createdAt }}</div>
+          <div class="contentStyle clearFloat">{{ data.repairsAddress }}</div>
+          <div class="contentStyle clearFloat">{{ data.content }}</div>
+        </div>
+        <div class="imageDivStyle">
+           <img class="imageStyle" src={{data.imageUrl[0]}}>
+        </div>
+        <div class="divItemEditStyle" >
+          <div (click)="editItem(data)" style="height:74px;">
+            <p   class="pItemEditStyle"
+              (mouseout) = "isMouseOnEdit = false"
+              (mouseover)= "isMouseOnEdit = true"
+              [ngClass]  = "{'mouseOnEditStyle':isMouseOnEdit}"
+            > 详情</p>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+
+
+  </ion-grid>
+  <!-- <ion-infinite-scroll (ionInfinite)="nextPage($event)">
+     <ion-infinite-scroll-content></ion-infinite-scroll-content>
+   </ion-infinite-scroll> -->
+</ion-content>
+
+<ion-footer>
+  <div style="float:left;width:900px;height:80px">
+    <ngb-pagination [collectionSize]="vPage.totalCount"
+                    [(page)]="vPage.pageIndex" [directionLinks]="false"
+                    [pageSize] ="vPage.pageSize" [boundaryLinks] = "true"
+                    [maxSize]= "vPage.pageConfCount" (pageChange)=pageChangeEnv()
+            >
+    </ngb-pagination>
+  </div>
+</ion-footer>

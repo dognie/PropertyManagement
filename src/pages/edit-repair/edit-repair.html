@@ -1,0 +1,226 @@
+<ion-header>
+    <ion-navbar color="navbar" style="padding:0 0 0 0;min-height:60px;max-height:60px;height:60px">
+ 
+        <ion-buttons>
+            <button ion-button  color="light">励生活</button>
+        </ion-buttons>
+ 
+    </ion-navbar>
+    <ion-navbar class="navbarStyle">
+        <ion-grid style="padding:0 0 0 0">
+            <ion-row class="rowStyle">
+                <div class="rowClickedStyle" >报事报修详情</div>
+            </ion-row>
+        </ion-grid>
+    </ion-navbar>
+</ion-header>
+ 
+<ion-content >
+ 
+    <ion-grid style="padding-left:40px;padding-right:40px;padding-top:10px">
+        <ion-item style='padding-left:34px;font-family: STXihei'>
+ 
+ 
+            <ion-row>
+                <ion-col>
+                    <div>
+                        <ion-row>
+                            <p item-left style="padding-top: 35px;font-size: 24px" >报修状态</p>
+                            <ion-col style="padding-left: 45px;padding-top: 33px">
+                                <input type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top:7px;outline-color:#FFD306" value={{data.status}}>
+                            </ion-col>
+ 
+                        </ion-row>
+                    </div>
+ 
+ 
+                    <div>
+                        <ion-row>
+                            <p item-left style="padding-top: 38px;font-size: 24px" >报修编号</p>
+                            <ion-col style="padding-left: 45px;padding-top: 33px">
+                                <input type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top: 7px;outline-color:#FFD306" value={{data.id}}>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+ 
+                    <div>
+                        <ion-row>
+                            <p item-left style="padding-top: 36px;font-size: 24px">报修姓名</p>
+                            <ion-col style="padding-left: 45px;padding-top: 33px">
+                                <input type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top: 7px;outline-color:#FFD306" value={{data.creatorName}}>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+ 
+ 
+                    <div>
+                        <ion-row>
+                            <p item-left style="padding-top: 37px;font-size: 24px">报修时间</p>
+                            <ion-col style="padding-left: 45px;padding-top: 33px">
+                                <input type="text" style="width:421px;height:51px;font-size:70%;padding-left: 22px;color:#999999;padding-top: 7px;outline-color:#FFD306" value={{data.createdAt}}>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+ 
+ 
+                    <div>
+                        <ion-row>
+ 
+                            <p item-left style="padding-top: 37px;font-size: 24px">报修地址</p>
+                            <ion-col style="padding-left: 45px;padding-top: 33px">
+ 
+                                <input  type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top: 7px" name="address" value={{data.repairsAddress}}>
+ 
+                            </ion-col>
+                        </ion-row>
+                    </div>
+ 
+ 
+                    <div>
+                        <ion-row>
+                            <p item-left style="padding-top: 37px;font-size: 24px">服务类型</p>
+                            <ion-col style="padding-left: 45px;padding-top: 33px">
+                                <input type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top: 7px" value={{data.type}}>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+ 
+ 
+                    <div>
+                        <ion-row>
+                            <p item-left style="padding-top: 36px;font-size: 24px">报修电话</p>
+                            <ion-col style="padding-left: 45px;padding-top: 33px">
+                                <input type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top: 7px" value={{data.phone}}>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+ 
+ 
+                    <div>
+                        <ion-row>
+                            <p item-left style="padding-top: 58px;font-size: 24px" >维修状态</p>
+                            <ion-col style="padding-left: 45px;padding-top: 50px">
+                                <div class="image"   >
+                                   
+                                   <img src={{vRepairProgressImage[0].imgpath}}
+                                     style="filter: grayscale(100%);"  
+                                     (mouseout) = "mouseListOne = false"  
+                                     (mouseover)= "mouseListOne = true"
+                                     [ngClass] = " {'imgeStyle':getStatus(vRepairProgressImage[0]) }"
+                                     ><!--
+                                     --><img  src={{vRepairProgressImage[1].imgpath}}
+                                     style="filter: grayscale(100%);" 
+                                     (mouseout) = "mouseListTwo = false" 
+                                      (mouseover)= "mouseListTwo = true"
+                                     [ngClass] = " {'imgeStyle':getStatus(vRepairProgressImage[1]) }"
+                                     ><!--
+                                     --><img src={{vRepairProgressImage[2].imgpath}}
+                                     style="filter: grayscale(100%);" 
+                                     (mouseout) = "mouseListThree = false"  
+                                     (mouseover)= "mouseListThree = true"
+                                      [ngClass] = " {'imgeStyle':getStatus(vRepairProgressImage[2]) }"
+                                      ><!--
+                                     --><img src={{vRepairProgressImage[3].imgpath}}
+                                          style="filter: grayscale(100%);" 
+                                     (mouseout) = "mouseListFour = false"  
+                                     (mouseover)= "mouseListFour = true"
+                                      [ngClass] = " {'imgeStyle':getStatus(vRepairProgressImage[3]) }">
+ 
+                                   
+                                 
+                          
+
+
+
+                                 
+                                </div>
+ 
+                                <div style="position:fixed">
+                                    <div [hidden]="!mouseListOne"  style="height: 84px;width: 137px;background:url('assets/image/e.jpg');
+">
+                                        <p style="font-size: 18px;padding-top: 22px;padding-left: 13px">{{data.creatorName}}</p>
+                                        <p style="font-size: 18px;padding-top: 11px;padding-left: 13px">{{data.phone}}</p>
+                                    </div>
+                                </div>
+ 
+ 
+                                <div  style="padding-left:85px;position:fixed">
+                                    <div [hidden]="!mouseListTwo"  style="height: 84px;width: 137px;background:url('assets/image/e.jpg');
+">
+                                        <p style="font-size: 18px;padding-top: 22px;padding-left: 13px">{{data.dealUserName}}</p>
+                                        <p style="font-size: 18px;padding-top: 11px;padding-left: 13px">{{data.dealUserPhone}}</p>
+                                    </div>
+                                </div>
+ 
+                                <div style="padding-left:200px;position:fixed">
+                                    <div [hidden]="!mouseListThree"  style="height: 84px;width: 137px;background:url('assets/image/e.jpg');
+">
+                                        <p style="font-size: 18px;padding-top: 22px;padding-left: 13px">{{data.dealUserName}}</p>
+                                        <p style="font-size: 18px;padding-top: 11px;padding-left: 13px">{{data.dealUserPhone}}</p>
+                                    </div>
+                                </div>
+ 
+                                <div style="padding-left:325px;position:fixed">
+                                    <div [hidden]="!mouseListFour"  style="height: 84px;width: 137px;background:url('assets/image/e.jpg');
+">
+                                        <p style="font-size: 18px;padding-top: 22px;padding-left: 13px">{{data.dealUserName}}</p>
+                                        <p style="font-size: 18px;padding-top: 11px;padding-left: 13px">{{data.dealUserPhone}}</p>
+                                    </div>
+                                </div>
+ 
+ 
+ 
+                            </ion-col>
+                        </ion-row>
+                    </div>
+ 
+ 
+                    <div >
+                        <ion-row>
+                            <p item-left style="padding-top: 8px;font-size: 24px">评价状态</p>
+                            <ion-col style="padding-left: 45px;padding-top: 15px">
+                               <span class="star"
+                                     *ngFor="let star of stars"
+                                     [ngClass]  = "{'ratingStyle':isRating(data,star)}"
+                                >&#9733;</span>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+ 
+                </ion-col>
+ 
+ 
+                <ion-col style='padding-left: 37px'>
+ 
+                    <div>
+                        <p style="font-size: 24px;padding-top: 37px">报修内容</p>
+                        <div style="padding-top: 15px">
+  <textarea type="text" style="width: 539px;height: 236px;padding-left: 14px;padding-top: 13px;font-size: 18px;color:#999999;outline-color:#FFD306"  cols=40 rows=4 >{{data.content}}
+ 
+</textarea>
+                        </div>
+                    </div>
+ 
+ <div>
+ <p style="font-size: 24px;padding-top: 66px">报修图片</p>
+                    <div class="imageDivStyle"  *ngFor="let imagedata of data.imageUrl">
+                        
+                   
+                        <img style="width: 161px;height: 161px;padding-top: 14px"  class="imageStyle" src={{imagedata}}>
+                    </div>
+                    </div>
+ 
+ 
+ 
+                </ion-col>
+            </ion-row>
+ 
+        </ion-item>
+ 
+ 
+    </ion-grid>
+</ion-content>
+ 
+ 
+
+

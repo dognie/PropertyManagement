@@ -1,0 +1,186 @@
+<ion-header>
+  <ion-navbar color="navbar" style="padding:0 0 0 0;min-height:60px;max-height:60px;height:60px">
+   
+    <ion-buttons >
+      <button ion-button  color="light">励生活</button>
+    </ion-buttons>
+
+  </ion-navbar>
+   <ion-navbar class="navbarStyle">
+    <ion-grid style="padding:0 0 0 0;">
+      <ion-row class="rowStyle">
+        <div class="rowClickedStyle" >工单详情</div>
+      </ion-row>
+        </ion-grid>
+        </ion-navbar>
+</ion-header>
+
+<ion-content >
+
+ <ion-grid style="padding-left:40px;padding-right:40px;padding-top:10px">
+ 
+ <ion-item style='padding-left:34px;font-family: STXihei'>
+
+
+
+<ion-row>
+<ion-col>
+
+
+<div>
+<ion-row>
+  <p item-left style="padding-top: 35px;font-size: 24px" >工单状态</p>
+  <ion-col style="padding-left: 45px;padding-top: 33px">
+  <input type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top:7px" value="{{data.status}}">
+   </ion-col>
+   
+   </ion-row>
+</div>
+
+
+<div>
+<ion-row>
+<p item-left style="padding-top: 38px;font-size: 24px" >工单编号</p>
+  <ion-col style="padding-left: 45px;padding-top: 33px">
+  <input type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top: 7px;" value="{{data.id}}">
+   </ion-col>
+   </ion-row>
+</div>
+
+<div>
+<ion-row>
+<p item-left style="padding-top: 36px;font-size: 24px">报修姓名</p>
+  <ion-col style="padding-left: 45px;padding-top: 33px">
+  <input type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top: 7px;" value="{{data.userName}}">
+   </ion-col>
+   </ion-row>
+</div>
+
+
+<div>
+<ion-row>
+<p item-left style="padding-top: 37px;font-size: 24px">创建时间</p>
+  <ion-col style="padding-left: 45px;padding-top: 33px">
+  <input type="text" style="width:421px;height:51px;font-size:70%;padding-left: 22px;color:#999999;padding-top: 7px;" value="{{data.createdAt}}">
+   </ion-col>
+   </ion-row>
+</div>
+
+  
+<div>
+<ion-row>
+
+<p item-left style="padding-top: 37px;font-size: 24px">报修地址</p>
+  <ion-col style="padding-left: 45px;padding-top: 33px">
+  
+  <input  type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top: 7px" name="address" value="{{data.repairsAddress}}">
+ 
+   </ion-col>
+   </ion-row>
+</div>
+ 
+ 
+  <div>
+  <ion-row>
+  <p item-left style="padding-top: 37px;font-size: 24px">服务类型</p>
+  <ion-col style="padding-left: 45px;padding-top: 33px">
+  <input type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top: 7px" value="{{data.type}}">
+   </ion-col>
+   </ion-row>
+  </div>
+
+  
+  <div>
+  <ion-row>
+  <p item-left style="padding-top: 36px;font-size: 24px">开 单 人</p>
+  <ion-col style="padding-left: 45px;padding-top: 33px">
+  <input type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top: 7px" value="{{data.userName}}">
+   </ion-col>
+   </ion-row>
+   </div>
+
+
+ <div>
+  <ion-row>
+  <p item-left style="padding-top: 36px;font-size: 24px">开单时间</p>
+  <ion-col style="padding-left: 45px;padding-top: 33px">
+  <input type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top: 7px" value={{data.createdAt}}>
+   </ion-col>
+   </ion-row>
+   </div>
+
+  <div>
+  <ion-row>
+  <p item-left style="padding-top: 36px;font-size: 24px">接单时间</p>
+  <ion-col style="padding-left: 45px;padding-top: 33px">
+  <input type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top: 7px" value={{data.updatedAt}}>
+   </ion-col>
+   </ion-row>
+   </div>
+
+  <div>
+  <ion-row>
+  <p item-left style="padding-top: 36px;font-size: 24px">部&nbsp;&nbsp;门</p>
+  <ion-col style="padding-left: 45px;padding-top: 33px">
+  <input type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top: 7px" value="{{data.departmentId}}">
+   </ion-col>
+   </ion-row>
+   </div>
+
+  <div>
+  <ion-row>
+  <p item-left style="padding-top: 36px;font-size: 24px">接 单 人</p>
+  <ion-col style="padding-left: 45px;padding-top: 33px">
+  <input type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top: 7px" value="{{data.schedulerName}}">
+   </ion-col>
+   </ion-row>
+   </div>
+
+  <div>
+  <ion-row>
+  <p item-left style="padding-top: 36px;font-size: 24px">维修人员</p>
+  <ion-col style="padding-left: 45px;padding-top: 33px">
+  <input type="text" style="width:421px;height:51px;font-size:18px;padding-left: 22px;color:#999999;padding-top: 7px" value="{{data.executorName}}">
+   </ion-col>
+   </ion-row>
+   </div>
+   
+
+
+
+
+
+</ion-col>
+
+<ion-col style='padding-left: 37px'>
+
+   <div>
+   <p style="font-size: 24px;padding-top: 37px">报修内容</p>
+  <div style="padding-top: 15px">
+  <textarea type="text" style="width: 539px;height: 236px;padding-left: 14px;padding-top: 13px;font-size: 18px;color:#999999;outline-color:#FFD306"  cols=40 rows=4 >{{data.content}}
+</textarea>
+</div>
+</div>
+  
+  
+ <div>
+ <p style="font-size: 24px;padding-top: 66px">报修图片</p>
+                    <div class="imageDivStyle"  *ngFor="let imagedata of data.imageUrl">
+                        
+                   
+                        <img style="width: 161px;height: 161px;padding-top: 14px"  class="imageStyle" src={{imagedata}}>
+                    </div>
+                    </div>
+
+</ion-col>
+
+</ion-row>
+</ion-item>
+</ion-grid>
+</ion-content>
+
+
+
+
+
+

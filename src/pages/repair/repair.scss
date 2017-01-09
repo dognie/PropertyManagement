@@ -1,0 +1,159 @@
+page-repair {
+
+}
+.filterStyle{
+  width:115px;
+  height:61px;
+  float:left;
+  text-align:center
+}
+.pFrontStyle{
+  font-size:18px;
+  margin-top:18px
+}
+.mouseOnfilterStyle{
+  color: #FD9C33;
+  background-color: #2d2d2d;
+}
+.menuBarStyle{
+
+}
+.pItemEditStyle{
+  font-size:18px !important;
+  padding-top:18px !important;
+  margin-top:2px;
+  height: 74px
+}
+.divItemEditStyle{
+  width:60px;
+  float:right;
+  visibility:hidden;
+  margin-left:26px;
+  margin-top:15px;
+  text-align:center
+}
+.mouseOnEditStyle{
+  color: #FD9C33 !important;
+}
+.contentStyle{
+  margin-top:14px;
+  width:82%;
+  font-size:18px;
+  height: 18px;
+}
+.star {
+  color: #efefef;
+  cursor: pointer;
+}
+.clearFloat{
+  clear: both;
+}
+.contentItemStyle
+{
+  margin: 0 0 0 0;
+  height:148px;
+  padding-left:20px
+}
+.ratingStyle
+{
+  color: #FFD600;
+}
+.navbarStyle
+{
+  padding:0 0 0 0;
+  min-height:45px;
+  max-height:61px;
+  height:61px;
+  overflow:visible
+}
+.rowStyle
+{
+  padding:0 0 0 0;
+  height:61px;
+  background-color:#ffffff;
+  position: relative;
+  box-shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.rowClickedStyle
+{
+  font-size:24px;
+  padding:0 0 0 0;
+  height:22px;
+  padding-left:40px;
+  padding-top:15px
+}
+.rowUnClickedStyle
+{
+  color:#999999;
+  font-size:24px;
+  padding-top:15px;
+  padding-left:40px
+}
+.contentGridStyle
+{
+  padding-left:40px;
+  padding-right:40px;
+  padding-top:11px;
+}
+.imageDivStyle
+{
+  float:left;
+  width:116px;
+  height:148px;
+  text-align:center;
+  padding-top:2px;
+}
+.imageStyle
+{
+  min-width: 116px;
+  min-height: 107px;
+  margin-top:16px;
+  margin-bottom:16px
+}
+.titleStyle
+{
+  width:75px;
+  height:60px;
+  font-size:24px;
+  margin-left:39px;
+  padding-top:15px;
+  color:#FFFFFF
+}
+.mouseOnTimefilterStyle
+{
+  height: 183px !important;
+  color: #FD9C33;
+  background-color: #2d2d2d;
+}
+.header-md::after
+{
+  position:static;
+}
+.datepicker__calendar
+{
+  left: -288px !important;
+  top:-2px !important;
+}
+.datepicker__input
+{
+  width: 100px;
+  margin: 17px 4px 17px 4px !important;
+  padding: 0 0 0 0 !important;
+  background-color:#2D2D2D !important;
+  color: #ffffff !important;
+  border:0px !important;
+}
+.mouseOnTypefilterStyle
+{
+  height: 305px !important;
+  color: #FD9C33;
+  background-color: #2d2d2d;
+  overflow: auto;
+}
+.mouseOnStafffilterStyle
+{
+  height: 305px !important;
+  color: #FD9C33;
+  background-color: #2d2d2d;
+  overflow: auto;
+}
